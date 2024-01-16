@@ -283,41 +283,84 @@ On class functions, we can access this props with the special word `this`:
 - **Examples**:
   - Functional Component using `useState`:
     ```javascript
-    import React, { useState } from 'react';
+      import React, { useState } from "react";
 
-    function Counter() {
-      const [count, setCount] = useState(0);
+      export default function Message1 () {
 
-      return (
-        <div>
-          <p>You clicked {count} times</p>
-          <button onClick={() => setCount(count + 1)}>
-            Click me
-          </button>
-        </div>
-      );
-    }
-    ```
-  - Class Component using `this.state`:
-    ```javascript
-    import React, { Component } from 'react';
+        const [message, setMessage] = useState("Welcome");
 
-    class Counter extends Component {
-      constructor(props) {
-        super(props);
-        this.state = { count: 0 };
-      }
+          function change (){
+            setMessage("Thank you using funciton");
+          }
 
-      render() {
         return (
-          <div>
-            <p>You clicked {this.state.count} times</p>
-            <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-              Click me
-            </button>
-          </div>
+          <>
+          <h1>{message}</h1>
+          <button onClick={change}>Subscribe</button>
+          </>
         );
       }
-    }
     ```
+### useState
+In React, the useState hook is used to add state to functional components. When we use useState, it returns an array with two elements, and we use array destructuring to get *Current State* and the *Setter Function*:
+- **The Current State:** This is the current value of the state variable. 
+- **A Setter Function:** This function is used to update the value of the state variable. 
+
+`const [value, setValue] = setState(initialValue)`
+
+**setValue** is a function that lets we safely update the state variable value. When we call setValue with a new value, it does two main things:
+- Updates the State: It changes the value of message to the new value you provide.
+- Triggers a Re-render: React then re-renders the component with the updated state. This is how your UI stays in sync with your state.
+
+We can use a normal function as seen in the example: 
+```javascript
+function change (){
+  setMessage("Thank you using funciton");
+}
+```
+Also, we can define an anonymous function and assigning it to a constant. 
+```javascript
+const changeMessage2 = function() {
+  setMessage("Thank you using function");
+}
+```
+But a better idea is to use arrow funciton:
+We can use the setValue, in that case setMessage, in an arrow funtion defined as changeMessage. This arrow funtion takes no parameters and uses the setMessage setter function to set the value of the message to a new text. 
+```javascript
+const changeMessage = () => {
+  setMessage("Thank you using arrow function");
+}
+```
+
+
+  - Class Component using `this.state`:
+    ```javascript
+      import React, { Component } from "react";
+
+      export default class Message extends Component {
+        constructor() {
+          super();
+          this.state = {
+            message: "Welcome Visitor",
+          };
+        }
+        changeMessage() {
+          this.setState({
+            message: "Thank you for"
+          })
+        }
+        render() {
+          return (
+            <div>
+              <h1>{this.state.message}</h1>
+              <button onClick={() => this.changeMessage()}>Subscribe</button>
+            </div>
+          );
+        }
+      }
+  ```
+
 We have to initialize the constructor with the super becasuse we are extending react componen class and the call has to be made to the base class constructor.
+### setState
+
+

@@ -6,6 +6,7 @@ import Welcome from './components/Welcome';
 import Hello from './components/Hello';
 import Hello1 from './components/Hello-javas';
 import Message from './components/Message';
+import Message1 from './components/Message1';
 
 
 
@@ -18,7 +19,7 @@ function App() {
       {/* <Hello1></Hello1> */}
       {/* <Hello name = "Bruce" heroName="Batman">This is children props</Hello>
       <Welcome name = "Midoriya" heroName="Deku"></Welcome> */}
-      <Message></Message>
+      <Message1></Message1>
     </div>
   );
 }
