@@ -8,14 +8,10 @@ export default function Message1 () {
     setMessage("Thank you using arrow function");
   }
 
-  // function change (){
-  //   setMessage("Thank you using funciton");
-  // }
-
   return (
     <>
     <h1>{message}</h1>
-    <button onClick={change}>Subscribe</button>
+    <button onClick={changeMessage}>Subscribe</button>
     </>
   );
 }
