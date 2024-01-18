@@ -30,8 +30,7 @@ export default function ListPerson() {
   ];
 
   const renderPerson = persons.map((person) => (
-    <Person person={person}></Person>
+    <Person person={person} key={person._id}></Person>
   ));
-
   return <>{renderPerson}</>;
 }

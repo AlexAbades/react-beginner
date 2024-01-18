@@ -13,24 +13,17 @@ import ParentComponent from './components/ParenComponent';
 import UserGreeting from './components/UserGreeting';
 import NameList from './components/NameList';
 import ListPerson from './components/ListPerson';
+import FragmentDemo from './components/FragmentDemo';
+import MemoCompoenent from './components/MemoCompoenent';
+import PortalDemo from './components/PortalDeamo';
 
 
 
 function App() {
   return (
     <div className="App">
-      {/* <Greet/>
-      <Greet1></Greet1>
-      <Welcome></Welcome> */}
-      {/* <Hello1></Hello1> */}
-      {/* <Hello name = "Bruce" heroName="Batman">This is children props</Hello>
-      <Welcome name = "Midoriya" heroName="Deku"></Welcome> */}
-      {/* <Message1></Message1> */}
-      {/* <Counter></Counter> */}
-      {/* <ParentComponent></ParentComponent> */}
-      {/* <UserGreeting></UserGreeting> */}
-      {/* <NameList></NameList> */}
-      <ListPerson>+</ListPerson>
+        <PortalDemo></PortalDemo>
+        {/* <MemoCompoenent name={"Pau"}></MemoCompoenent> */}
     </div>
   );
 }
