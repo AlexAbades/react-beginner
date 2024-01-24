@@ -1,9 +1,9 @@
 import React from "react";
+import { createPortal } from 'react-dom';
 
 export default function PortalDemo() {
-  return (
-    <>
-      <h1>Portals Demo</h1>
-    </>
-  );
+  return createPortal(
+    <h1>Portals Demo</h1>,
+    document.getElementById('portal-root')
+  )
 }

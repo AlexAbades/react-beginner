@@ -16,15 +16,24 @@ import ListPerson from './components/ListPerson';
 import FragmentDemo from './components/FragmentDemo';
 import MemoCompoenent from './components/MemoCompoenent';
 import PortalDemo from './components/PortalDeamo';
+import PortalExample from './components/PortalExample';
+import NoPortalExample from './components/NoPoertalExample';
 
 
 
 function App() {
   return (
-    <div className="App">
-        <PortalDemo></PortalDemo>
-        {/* <MemoCompoenent name={"Pau"}></MemoCompoenent> */}
-    </div>
+    // <div className="App">
+    //     <PortalDemo />
+    // </div>
+    <>
+      <div className="clipping-container">
+        <NoPortalExample  />
+      </div>
+      <div className="clipping-container">
+        <PortalExample />
+      </div>
+    </>
   );
 }
 
